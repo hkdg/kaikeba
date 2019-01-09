@@ -8,31 +8,37 @@
       </li>
     </ul>
     <Cart></Cart>
+    <br>
+    <form-test></form-test>
   </div>
 </template>
 
 <script>
 import Cart from "./components/Cart";
-
+import formTest from "./components/formTest";
 export default {
   name: "App",
   data() {
     return {
       goods: [
         {
-          "id": 1,
-          "text": "web全栈之路",
-          "price": 9999
+          id: 1,
+          text: "web全栈之路",
+          price: 9999
         },
         {
-          "id": 2,
-          "text": "python爬虫之路",
-          "price": 999
+          id: 2,
+          text: "python爬虫之路",
+          price: 999
         }
-      ]
+      ],
+      inp: ""
     };
   },
   created() {},
+  mounted() {
+    console.log(this.$refs.inp);
+  },
   methods: {
     addCart(i) {
       const good = this.goods[i];
@@ -40,7 +46,8 @@ export default {
     }
   },
   components: {
-    Cart
+    Cart,
+    formTest
   }
 };
 </script>
