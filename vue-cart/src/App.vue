@@ -8,7 +8,9 @@
       </li>
     </ul>
     <Cart></Cart>
+
     <br>
+    <h1>表单</h1>
     <form-test></form-test>
   </div>
 </template>
@@ -37,7 +39,7 @@ export default {
   },
   created() {},
   mounted() {
-    console.log(this.$refs.inp);
+    // console.log(this.$refs.inp);
   },
   methods: {
     addCart(i) {

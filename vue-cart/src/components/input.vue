@@ -1,7 +1,7 @@
 <template>
-    <div>
-        <input type="text" :value="val" @input="change">
-    </div>
+   
+    <input :type="type" :value="val" @input="change">
+        
 </template>
 
 <script>
@@ -11,6 +11,10 @@
             value:{
                 type: String,
                 default: ""
+            },
+            type:{
+                type: String,
+                default: "text"
             }
         },
         data(){
@@ -19,11 +23,10 @@
             }
         },
         created(){
-            console.log(this.test)
         },
         methods:{
             change(e){
-                console.log(e,e.target.value)
+                // console.log(e,e.target.value)
                 this.val = e.target.value
                 this.$emit('input',this.val)
             }

@@ -41,7 +41,7 @@ export default {
     const cart = localStorage.getItem("cart");
     if (cart) {
 // console.log(JSON.parse(localStorage.getItem("cart")));
-      this.cart = JSON.parse(cart);
+      // this.cart = JSON.parse(cart);
     }
 
     this.$bus.$on("addCart", good => {
