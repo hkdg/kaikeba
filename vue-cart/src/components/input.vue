@@ -29,6 +29,7 @@
                 // console.log(e,e.target.value)
                 this.val = e.target.value
                 this.$emit('input',this.val)
+                this.$parent.$emit('validate',this.val)
             }
         }
     }
