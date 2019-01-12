@@ -2,10 +2,11 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import App from './App'
-
+import $dispatch from '@/common/dispatch'
 Vue.config.productionTip = false
 
 Vue.prototype.$bus = new Vue()
+Vue.prototype.$dispatch = $dispatch
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

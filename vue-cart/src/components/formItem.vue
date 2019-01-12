@@ -11,6 +11,12 @@
 <script>
 import schema from "async-validator";
 export default {
+  name:'formItem',
+  provide(){
+    return {
+      formItme: this
+    }
+  },
   inject: ["form"],
   props: ["label", "prop"],
   data() {
@@ -35,13 +41,13 @@ export default {
       return new Promise((resolve,reject) => {
         const descriptor = {
           //校验规则
-          [this.prop]: { type: "string", required: true }
+          [this.prop]: this.form.rules[this.prop]
         };
-        console.log("descriptor", descriptor);
+        // console.log("descriptor", descriptor);
         const validator = new schema(descriptor);
-        console.log(" validator.validate", {
-          [this.prop]: this.form.model[this.prop]
-        });
+        // console.log(" validator.validate", {
+        //   [this.prop]: this.form.model[this.prop]
+        // });
         // return
         validator.validate(
           { [this.prop]: this.form.model[this.prop] },

@@ -5,8 +5,9 @@
 </template>
 
 <script>
-
+    
     export default {
+        inject:['formItme'],
         props:{
             value:{
                 type: String,
@@ -29,7 +30,9 @@
                 // console.log(e,e.target.value)
                 this.val = e.target.value
                 this.$emit('input',this.val)
-                this.$parent.$emit('validate',this.val)
+                // this.$parent.$emit('validate',this.val)
+                // console.log(this,this.$dispatch)
+                this.$dispatch.dispatch.bind(this)('formItem','validate',this.val)
             }
         }
     }
