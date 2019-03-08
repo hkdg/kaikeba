@@ -12,16 +12,25 @@
     <br>
     <h1>表单</h1>
     <form-test></form-test>
+    <ul>
+      <li v-for="(val,key,i) in app">---值：{{val}}---键{{key}}----索引：{{i}}</li>
+    </ul>
   </div>
 </template>
 
 <script>
 import Cart from "./components/Cart";
 import formTest from "./components/formTest";
+import axios from 'axios'
 export default {
   name: "App",
   data() {
     return {
+      app: {
+        a: 1,
+        b: 2,
+        c: 3
+      },
       goods: [
         {
           id: 1,
@@ -39,6 +48,10 @@ export default {
   },
   created() {},
   mounted() {
+    // axios.get('https://sseat.damai.cn/xuanzuo/io/350200/1937471831/10000003/1718301.json').then(res=>{
+    //   console.log(res);
+      
+    // })
     // console.log(this.$refs.inp);
   },
   methods: {
