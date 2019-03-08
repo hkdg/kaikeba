@@ -3,7 +3,9 @@
     <!-- <k-input v-model="someValue"></k-input> -->
     <k-form :model="form" :rules="rules" ref="ruleForm">
       <k-form-item label="姓名" prop="name">
-        <k-input type="text" v-model="form.name"></k-input>
+        <k-test>
+          <k-input type="text" v-model="form.name"></k-input>
+        </k-test>
       </k-form-item>
       <k-form-item label="密码" prop="pwd">
         <k-input type="password" v-model="form.pwd"></k-input>
@@ -19,7 +21,7 @@
 import KForm from "./form.vue";
 import KFormItem from "./formItem.vue";
 import KInput from "./input.vue";
-
+import KTest from "./div.vue";
 export default {
   data() {
     return {
@@ -55,7 +57,8 @@ export default {
   components: {
     KInput,
     KFormItem,
-    KForm
+    KForm,
+    KTest
   }
 };
 </script>
